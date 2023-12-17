@@ -88,8 +88,8 @@ void locater(char *opcode, char *val, int ln, int format)
 		{"push", stack_add},
 		{"pall", stack_print},
 		{"pint", printup},
-		{"poper", poperup},
-		{"noper", noper},
+		{"pop", poperup},
+		{"nop", noper},
 		{"swap", node_sw},
 		{"add", additionn},
 		{"sub", subtractionn},
@@ -98,8 +98,8 @@ void locater(char *opcode, char *val, int ln, int format)
 		{"mod", modulosn},
 		{"pchar", printch},
 		{"pstr", printst},
-		{"rotation", rotation},
-		{"rotation_rev", rotation_rev},
+		{"rotl", rotation},
+		{"rotr", rotation_rev},
 		{NULL, NULL}
 	};
 

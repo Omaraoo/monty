@@ -22,10 +22,10 @@ void bug(int bugs_code, ...)
 	switch (bugs_code)
 	{
 		case 1:
-			fprintf(stderr, "USargE: monty file\n");
+			fprintf(stderr, "USAGE: monty file\n");
 			break;
 		case 2:
-			fprintf(stderr, "bugs: Can't operen file %s\n",
+			fprintf(stderr, "bugs: Can't open file %s\n",
 				va_arg(arg, char *));
 			break;
 		case 3:
@@ -37,7 +37,7 @@ void bug(int bugs_code, ...)
 			fprintf(stderr, "bugs: malloc failed\n");
 			break;
 		case 5:
-			fprintf(stderr, "L%d: usarge: push integer\n", va_arg(arg, int));
+			fprintf(stderr, "L%d: usage: push integer\n", va_arg(arg, int));
 			break;
 		default:
 			break;
@@ -57,7 +57,7 @@ void bug(int bugs_code, ...)
 void more_bug(int bugs_code, ...)
 {
 	va_list arg;
-	char *oper;
+	char *op;
 	int lin_no;
 
 	va_start(arg, bugs_code);
@@ -68,13 +68,13 @@ void more_bug(int bugs_code, ...)
 				va_arg(arg, int));
 			break;
 		case 7:
-			fprintf(stderr, "L%d: can't poper an empty stack\n",
+			fprintf(stderr, "L%d: can't pop an empty stack\n",
 				va_arg(arg, int));
 			break;
 		case 8:
 			lin_no = va_arg(arg, unsigned int);
-			oper = va_arg(arg, char *);
-			fprintf(stderr, "L%d: can't %s, stack too short\n", lin_no, oper);
+			op = va_arg(arg, char *);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", lin_no, op);
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n",
